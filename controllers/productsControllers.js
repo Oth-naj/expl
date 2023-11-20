@@ -11,14 +11,19 @@ const path=require('path')
 
 //creat name, description, price, quantity, image
 const creatProduct= (req,res) => {
+    console.log(req.body)
     const result = validationResult(req);
     if (!result.isEmpty()) {
       return res.json({erreur:result.array()});
     }
   
   let id = Math.floor(Math.random() * 1000)
+  if (req.file) {
+    console.log(req.file)
+ }
 
- product.push({id:id ,name:req.body.name,description:req.body.description,price:req.body.price,quantité:req.body.quantité,image:req.file})
+ product.push({id:id ,name:req.body.name,description:req.body.description,price:req.body.price,quantite:req.body.quantite,image:req.file.originalname})
+ 
  console.log(image)
  fs.writeFile(path.join(__dirname,'../data/data.json'),JSON.stringify(product,null,2),(erreur)=>{
 
