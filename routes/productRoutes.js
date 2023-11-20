@@ -9,8 +9,15 @@ const { uploadSingle } =require('../helpers/multerMidelwar')
 
 
 
+routes.post('/', 
+    uploadSingle,
+    body('name').notEmpty(),
+    body('description').notEmpty(),
+    body('price').notEmpty(),
+    body('quantite').notEmpty(),
+    creatProduct
+);
 
-routes.post('/', body('name').notEmpty(),body('description').notEmpty(),body('price').notEmpty(),body('quantite').notEmpty(),creatProduct,uploadSingle)
 routes.get('/',getProduct)
 routes.put('/',appdateProduct)
 routes.delete('/',deletProduct)

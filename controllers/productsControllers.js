@@ -24,7 +24,7 @@ const creatProduct= (req,res) => {
 
  product.push({id:id ,name:req.body.name,description:req.body.description,price:req.body.price,quantite:req.body.quantite,image:req.file.originalname})
  
- console.log(image)
+
  fs.writeFile(path.join(__dirname,'../data/data.json'),JSON.stringify(product,null,2),(erreur)=>{
 
     console.log(erreur)
