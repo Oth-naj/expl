@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const ConnectDb = require('./Config/Collectdb')
 const productroutes=require('./routes/productRoutes');
 const userRoutes=require('./routes/userRoute');
-const orderRoutes =require('./routes/OrdeRoute ')
+const orderRoutes =require('./routes/ordeRoutes');
 
 const cors =require('cors');
 app.use(cors({
@@ -18,6 +18,7 @@ ConnectDb();
 app.use('/product',productroutes);
 app.use('/user', userRoutes);
 app.use('/order',orderRoutes)
+
 
 // ...
 

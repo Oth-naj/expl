@@ -22,3 +22,4 @@ routes.get('/',getProduct)
 routes.put('/',appdateProduct)
 routes.delete('/:id',deletProduct)
 module.exports = routes ;
+
