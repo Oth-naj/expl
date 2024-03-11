@@ -1,6 +1,7 @@
 const express =require('express');
 const  app =express();
 const bodyParser = require('body-parser')
+const connectDB = require('./config/collectDB')
 
 const productroutes=require('./routes/productRoutes');
 const cors =require('cors');
@@ -9,7 +10,7 @@ app.use(cors({
 }));
 app.use(bodyParser())
 app.use(express.json())
-
+connectDB();
 app.use('/',productroutes);
 
 // ...
