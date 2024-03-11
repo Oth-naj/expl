@@ -20,5 +20,6 @@ routes.post('/',
 
 routes.get('/',getProduct)
 routes.put('/',appdateProduct)
-routes.delete('/',deletProduct)
+routes.delete('/:id',deletProduct)
 module.exports = routes ;
+
